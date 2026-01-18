@@ -1,0 +1,37 @@
+{
+  "id": 0,
+  "userId": 0,
+  "up": 0,
+  "down": 0,
+  "total": 0,
+  "allTime": 0,
+  "remark": "example",
+  "enable": true,
+  "expiryTime": 0,
+  "trafficReset": "never",
+  "lastTrafficResetTime": 0,
+  "listen": "127.0.0.1", # используем локальный адрес для входящего подключения, иначе оно будет общедоступным
+  "port": 10000, # любой, его нужно будет указать в конфигурации nginx
+  "protocol": "vless",
+  "settings": "{\n  \"clients\": [\n    {\n      \"id\": \"\",\n      \"security\": \"\",\n      \"password\": \"\",\n      \"flow\": \"\",\n      \"email\": \"example\",\n      \"limitIp\": 0,\n      \"totalGB\": 0,\n      \"expiryTime\": 0,\n      \"enable\": true,\n      \"tgId\": 0,\n      \"subId\": \"0rb5j1rd2xef4nys\",\n      \"comment\": \"\",\n      \"reset\": 0,\n      \"created_at\": 0,\n      \"updated_at\": 0\n    }\n  ],\n  \"decryption\": \"mlkem768x25519plus.native.600s.example\",\n  \"encryption\": \"mlkem768x25519plus.native.example\",\n  \"selectedAuth\": \"ML-KEM-768, Post-Quantum\"\n}",
+  "streamSettings": "{\n  \"network\": \"xhttp\",\n  \"security\": \"none\",\n  \"externalProxy\": [\n    {\n      \"forceTls\": \"same\",\n      \"dest\": \"example.host\",\n      \"port\": 443,\n      \"remark\": \"\"\n    }\n  ],\n  \"xhttpSettings\": {\n    \"path\": \"/api/example/path\",\n    \"host\": \"example.host\",\n    \"headers\": {},\n    \"scMaxBufferedPosts\": 30,\n    \"scMaxEachPostBytes\": \"1000000\",\n    \"scStreamUpServerSecs\": \"20-80\",\n    \"noSSEHeader\": false,\n    \"xPaddingBytes\": \"100-1000\",\n    \"mode\": \"auto\"\n  }\n}", # path и host должны совпадать с настройками в nginx и реальным доменом. Транспорт xhttp рекомендуется разработчиком для работы с Cloudflare CDN. Прокси используется для добавления реального ip и порта для клиента ЭТОГО ЖЕ СЕРВЕРА
+  "tag": "inbound-127.0.0.1:10000",
+  "sniffing": "{\n  \"enabled\": false,\n  \"destOverride\": [\n    \"http\",\n    \"tls\",\n    \"quic\",\n    \"fakedns\"\n  ],\n  \"metadataOnly\": false,\n  \"routeOnly\": false\n}", # для работы PBR на этой ноде минимально необходимо включить параментр routeOnly
+  "clientStats": [
+    {
+      "id": 1,
+      "inboundId": 0,
+      "enable": true,
+      "email": "example",
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "subId": "00000",
+      "up": 0,
+      "down": 0,
+      "allTime": 0,
+      "expiryTime": 0,
+      "total": 0,
+      "reset": 0,
+      "lastOnline": 0
+    }
+  ]
+}
